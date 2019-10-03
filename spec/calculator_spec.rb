@@ -14,7 +14,6 @@ RSpec.describe Calculator do
 
       it 'must be integer result' do
         calculator = Calculator.new
-        expected_result = numbers.reduce(0, :+)
 
         expect(calculator.add(numbers.join(','))).to be_an(Integer)
       end
