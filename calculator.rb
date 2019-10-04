@@ -14,6 +14,8 @@ class Calculator
     numbers.select{ |n| n < 1000 }.reduce(0, :+)
   end
 
+  private
+
   def delimiter?(str_numbers)
     str_numbers.scan(%r{^\/{2}\W*\\n}).size.positive?
   end
