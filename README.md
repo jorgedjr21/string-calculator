@@ -4,12 +4,15 @@ This is a simple ruby string number calculator.
 
 ## How to run
 You will need ruby 2.6.* and bundler installed in your machine
+If you don't have ruby installed, follow the **Installing Ruby** from this tutorial:
+[Go Rails](https://gorails.com/setup/ubuntu/19.04)
+
 Open the project folder and run:
 
 ```shell
 cd string-calculator
 bundle install
-ruby calculator_run '1,2,3,4'
+ruby calculator_run.rb '1,2,3,4'
 ```
 
 ## How to run the tests
