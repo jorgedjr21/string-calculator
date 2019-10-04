@@ -2,11 +2,12 @@
 
 This is a simple ruby string number calculator.
 
-## How to run
+## Environment
 You will need ruby 2.6.* and bundler installed in your machine
 If you don't have ruby installed, follow the **Installing Ruby** from this tutorial:
 [Go Rails](https://gorails.com/setup/ubuntu/19.04)
 
+## How to run
 Open the project folder and run:
 
 ```shell
