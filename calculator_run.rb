@@ -2,4 +2,4 @@ require './calculator'
 
 calculator = Calculator.new
 
-p calculator.add('//$\n1$2$3$')
+p calculator.add('1,-2,3,-4,5')
