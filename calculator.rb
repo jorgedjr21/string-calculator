@@ -11,7 +11,7 @@ class Calculator
     neg_numbers = negatives(numbers)
     raise Exception.new, "Negatives not allowed: #{neg_numbers}" if neg_numbers.size > 0
 
-    numbers.reduce(0, :+)
+    numbers.select{ |n| n < 1000 }.reduce(0, :+)
   end
 
   def delimiter?(str_numbers)

@@ -69,5 +69,23 @@ RSpec.describe Calculator do
         expect { calculator.add(test_numbers3) }.to raise_error('Negatives not allowed: [-5, -1]')
       end
     end
+
+    context "when has \e[34mnumbers biggers than 1000\e[0m" do
+      let!(:test_numbers1) { '1,2,3000,3' }
+      let!(:test_numbers2) { '1,\n2,1001,4' }
+      let!(:test_numbers3) { '//@\n999@1@1000' }
+
+      it 'must sum only numbers < 1000' do
+        expect(calculator.add(test_numbers1)).to be(6)
+        expect(calculator.add(test_numbers2)).to be(7)
+        expect(calculator.add(test_numbers3)).to be(1000)
+      end
+
+      it 'must be integer result' do
+        expect(calculator.add(test_numbers1)).to be_an(Integer)
+        expect(calculator.add(test_numbers2)).to be_an(Integer)
+        expect(calculator.add(test_numbers3)).to be_an(Integer)
+      end
+    end
   end
 end
