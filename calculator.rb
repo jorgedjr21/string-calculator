@@ -2,7 +2,8 @@ class Calculator
   def add(str_numbers)
 
     if delimiter?(str_numbers)
-      delimiter = get_delimiter(str_numbers)
+      delimiter = get_delimiter(str_numbers).split(',')
+      delimiter = delimiter.size == 1 ? delimiter.first : /\D/
       no_delimiter_numbers = str_numbers.split(%r{^\/{2}\W*\\n}).reject { |v| v == '' }[0]
       numbers = no_delimiter_numbers.split(delimiter).map(&:to_i)
     else

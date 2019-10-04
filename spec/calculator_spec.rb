@@ -70,6 +70,24 @@ RSpec.describe Calculator do
       end
     end
 
+    context "when numbers has \e[34mmultiples delimiters of arbitrary length\e[0m" do
+      let!(:test_numbers1) { '//@@@,$$,####\n1@@@2$$4####3' }
+      let!(:test_numbers2) { '//@@@,$$\n1@@@2$$4' }
+      let!(:test_numbers3) { '//@@@,$$,####,>>\n1@@@2$$4####3>>5' }
+
+      it 'must sum the numbers correctly' do
+        expect(calculator.add(test_numbers1)).to be(10)
+        expect(calculator.add(test_numbers2)).to be(7)
+        expect(calculator.add(test_numbers3)).to be(15)
+      end
+
+      it 'must be integer result' do
+        expect(calculator.add(test_numbers1)).to be_an(Integer)
+        expect(calculator.add(test_numbers2)).to be_an(Integer)
+        expect(calculator.add(test_numbers3)).to be_an(Integer)
+      end
+    end
+
     context "when has \e[34mnegative numbers\e[0m" do
       let!(:test_numbers1) { '1,-2,3,-4,5' }
       let!(:test_numbers2) { '1,\n2,-3,4,-10' }
