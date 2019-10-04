@@ -1,5 +1,11 @@
 require './calculator'
 
-calculator = Calculator.new
+numbers = ARGV[0]
 
-p calculator.add('//@@@,$$,####\n1@@@2$$4####3')
+if numbers.nil?
+  print "Error: \e[31m No numbers are given.\e[0m \n"
+  print "Usage: \e[34m ruby calculator_run.rb '1,2,3,4'\e[0m for example\n\n"
+else
+  calculator = Calculator.new
+  p calculator.add(numbers)
+end
